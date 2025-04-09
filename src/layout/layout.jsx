@@ -15,16 +15,17 @@ export default function Layout() {
         <div className="style-searchbar-filter">
             <Searchbar/>
         </div>
-
+        
         <div className="style-layout-filters">
             <Sidebar/>
         </div>
-
 
          <div className="style-main-content">
             <h1>Game Lab</h1>
             <Outlet />
         </div>
+
+
         <Footer/>
         </div>
     );

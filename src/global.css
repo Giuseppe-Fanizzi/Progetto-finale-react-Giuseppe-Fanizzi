@@ -1,3 +1,268 @@
+
+
+   :root {
+    --bg-color: #121212;
+    --sidebar-color: #1c1c1c;
+    --text-color: #ffffff;
+    --accent-color: #ff4081; 
+    --card-bg-color: #2a2a2a;
+    --navbar-height: 60px;
+    --sidebar-width: 220px;
+    --transition-speed: 0.3s;
+  }
+  
+ 
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  /*Layout generale*/
+  .app-container {
+    display: flex; /* sidebar a sinistra, contenuto a destra */
+    min-height: 100vh;
+    flex-direction: row;
+  }
+  
+  .sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-color);
+    flex-shrink: 0; /* evita che si restringa troppo */
+    padding: 1rem;
+  }
+  
+  .main-content {
+    flex: 1; /* prende tutto lo spazio rimanente */
+    display: flex;
+    flex-direction: column; /* header in alto, contenuto sotto */
+  }
+  
+  /*Navbar in alto*/
+  .navbar {
+    height: var(--navbar-height);
+    background-color: var(--sidebar-color);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    border-bottom: 1px solid #333;
+  }
+  
+  .navbar-logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 2rem;
+  }
+  
+  .navbar-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  
+  .navbar-search input {
+    width: 100%;
+    padding: 0.5rem 2.5rem 0.5rem 0.75rem; /* spazio per l’icona se serve */
+    font-size: 1rem;
+    background-color: #000;
+    border: 1px solid #444;
+    color: var(--text-color);
+    border-radius: 4px;
+  }
+  
+  .navbar-search input::placeholder {
+    color: #888;
+  }
+  
+  .navbar-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .navbar-profile,
+  .navbar-links {
+    cursor: pointer;
+    transition: opacity var(--transition-speed);
+  }
+  
+  .navbar-profile:hover,
+  .navbar-links:hover {
+    opacity: 0.8;
+  }
+  
+  
+  
+  /*sidebar*/
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color var(--transition-speed);
+  }
+  
+  .sidebar a:hover {
+    color: var(--accent-color);
+  }
+  
+  .sidebar .sidebar-title {
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* ==============================
+     Contenuto principale
+     ============================== */
+  .content-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .content-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .content-header p {
+    font-size: 0.9rem;
+    color: #999;
+  }
+  
+  /* Banner promozionale */
+  .banner {
+    background-color: var(--accent-color);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    margin: 0 1rem;
+    border-radius: 4px;
+  }
+  
+  /* Filtro / ordina */
+  .filter-bar {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .filter-bar select,
+  .filter-bar button {
+    padding: 0.5rem;
+    background-color: #000;
+    color: var(--text-color);
+    border: 1px solid #444;
+    border-radius: 4px;
+  }
+  
+  /* Card dei giochi */
+  
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Singola card */
+  .game-card {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    cursor: pointer;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .game-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .game-card-content {
+    padding: 0.75rem;
+  }
+  
+  .game-card-content .game-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .game-card-content .game-details {
+    font-size: 0.85rem;
+    color: #aaa;
+  }
+  
+  /* Badge */
+  .game-card-content .game-badge {
+    display: inline-block;
+    background-color: #333;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .app-container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #333;
+    }
+  
+    .main-content {
+      width: 100%;
+    }
+  
+    .navbar {
+      height: auto;
+      flex-wrap: wrap;
+      padding: 1rem;
+    }
+  
+    .navbar-search {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+  
+
 .game-image {
     max-width: 300px;
     height: auto;

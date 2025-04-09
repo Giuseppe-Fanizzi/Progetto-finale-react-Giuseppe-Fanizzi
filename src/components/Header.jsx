@@ -1,7 +1,7 @@
 export default function Header() {
     return (
         <>
-            <header>
+            <header className="navbar">
                 <h1>Game Lab</h1>
                 <nav>
                     <ul>
