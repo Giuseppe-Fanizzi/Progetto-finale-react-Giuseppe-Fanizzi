@@ -1,7 +1,7 @@
 export default function Footer() { 
     return (
         <footer>
-            <div className="footer-content">
+            <div className="bg-black text-white text-center">
                 <p>&copy; 2023 Rehacktor. All rights reserved. 
                 </p>
                 <p>Follow us on social media:</p>

@@ -1,0 +1,84 @@
+
+
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+  
+}
+
+.btn-cyberpunk {
+  height: 45px;
+  width: 190px;
+  font-family: 'Orbitron', sans-serif;
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  color: #181818;
+  background: #e017178e;
+  border: black;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.00em;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow:
+    0 0 2px rgba(143, 4, 4, 0.349),
+    inset 0 0 2px rgba(255, 50, 50, 0.5);
+  transition: color 0.2s ease-in-out;
+}
+
+/* Hover effects */
+.btn-cyberpunk:hover {
+  color: #ffe6e6;
+  box-shadow:
+    0 0 16px rgba(230, 0, 0, 0.9),
+    inset 0 0 16px rgba(255, 80, 80, 0.7);
+}
+
+.btn-cyberpunk:hover::before {
+  transform: scale(4);
+}
+
+/* Pulsing glow animation */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 8px rgba(230, 0, 0, 0.7),
+      inset 0 0 8px rgba(255, 50, 50, 0.5);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(230, 0, 0, 1),
+      inset 0 0 20px rgba(255, 100, 100, 0.8);
+  }
+}
+
+.btn-cyberpunk.pulse {
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+.release-date-anim {
+    display: inline-block;      /* per permettere la trasformazione */
+    opacity: 0;                 /* parte nascosto */
+    animation: slideFade 4s ease-in-out forwards;
+  }
+  
+  @keyframes slideFade {
+    0% {
+      transform: translateX(-40px);
+      opacity: 0;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    80% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(40px);
+      opacity: 0;
+    }
+  }

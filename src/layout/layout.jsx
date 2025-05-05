@@ -8,21 +8,22 @@ import Searchbar from "../components/Searchbar";
 export default function Layout() {
     return (
         
-        <div className="style-layout-system">
+        <div className="mb-5">
 
         <Header/>
         
-        <div className="style-searchbar-filter">
-            <Searchbar/>
-        </div>
+       
         
+        <div className="layout-content">
+            
         <div className="style-layout-filters">
             <Sidebar/>
         </div>
 
-         <div className="style-main-content">
-            <h1>Game Lab</h1>
+         <div className="style-main-content text-center">
+            
             <Outlet />
+        </div>
         </div>
 
 

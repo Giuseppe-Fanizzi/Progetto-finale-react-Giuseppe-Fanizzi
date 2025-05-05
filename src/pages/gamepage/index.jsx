@@ -14,7 +14,7 @@ export default function GamePage() {
     return (
         <>
         {error && <h1>{error}</h1>}
-        <div className="style-gamepage">
+        <div className="game-page">
             <div className="style-game-info">
                 <p>{data && data.released}</p>
                 <h1>{data && data.name}</h1>

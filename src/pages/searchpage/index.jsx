@@ -20,7 +20,7 @@ export default function SearchPage() {
       <h1>Risultati per: {game} game</h1>
       {loading && <p>loading...</p>}
       {error && <h1>{error}</h1>}
-      <div>
+      <div className=" games-grid">
         {data &&
           data.results.map((game) => (
             <CardGame key={game.id} game={game} />

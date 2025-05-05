@@ -18,7 +18,7 @@ const handleSearch = (event) => {
 };
 
 return (
-    <form onSubmit={handleSearch}>
+    <form className="search-bar" onSubmit={handleSearch}>
       <fieldset role="group">
         <input
           type="text"

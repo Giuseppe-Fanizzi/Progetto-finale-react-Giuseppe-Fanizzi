@@ -20,11 +20,33 @@
   }
   
   body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    background-color: black !important;
+    color: white !important;
+    
+  }
+
+  ul {
+    list-style-type: none; 
+    padding-left: 0;       
+    margin: 0;             
   }
   
+  li a {
+    text-decoration: none;  
+    padding: 0.5rem 0.5rem;
+    color: rgb(255, 255, 255);           
+  }
+  
+  
+  
   /*Layout generale*/
+
+  .layout-content {
+    display: flex;
+    min-height: 100vh;
+    
+  }
+
   .app-container {
     display: flex; /* sidebar a sinistra, contenuto a destra */
     min-height: 100vh;
@@ -45,11 +67,21 @@
   }
   
   /*Navbar in alto*/
+
+  .link-item {
+    display: flex;
+    align-items: center;
+    padding: 3rem 3rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: background-color var(--transition-speed);
+  }
   .navbar {
     height: var(--navbar-height);
     background-color: var(--sidebar-color);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 1rem;
     border-bottom: 1px solid #333;
   }
@@ -98,6 +130,44 @@
   .navbar-links:hover {
     opacity: 0.8;
   }
+
+  /*searchbar*/
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: rgb(182, 27, 27);
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    outline: none;
+  }
+  
+  .search-bar button {
+    background-color: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .search-icon {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+  }
+  
   
   
   
@@ -123,7 +193,7 @@
   }
   
   .sidebar a:hover {
-    color: var(--accent-color);
+    color: var(--accent-color) !important;
   }
   
   .sidebar .sidebar-title {
@@ -183,14 +253,16 @@
   
   .games-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
     padding: 1rem;
   }
   
   /* Singola card */
   .game-card {
     background-color: var(--card-bg-color);
+    color: white;
+    height: 500px;
     border-radius: 8px;
     overflow: hidden;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
@@ -202,12 +274,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   }
   
-  .game-card img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    display: block;
-  }
   
   .game-card-content {
     padding: 0.75rem;
@@ -234,7 +300,25 @@
     margin-right: 0.5rem;
   }
   
+
+  .style-layout-filters {
+    width: 200px;      
+    
+    background-color: #111; 
+  }
   
+  .style-main-content {
+    flex: 1;              
+    
+    background-color: #222;
+  }
+  
+
+  .game-page{
+    color: white;
+
+  }
+
   @media (max-width: 768px) {
     .app-container {
       flex-direction: column;
@@ -264,7 +348,8 @@
   
 
 .game-image {
-    max-width: 300px;
-    height: auto;
+  
+   width: 100%;
+    height: 225px;
     
   }

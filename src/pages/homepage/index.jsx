@@ -1,5 +1,6 @@
 
 import CardGame from "../../components/CardGame";
+
 import  useFetchSolution  from "../../hook/useFetchSolution";
 
 export default function Homepage() {
@@ -11,12 +12,18 @@ export default function Homepage() {
 
     return (
         <>
+        <div className="text-center">
+
             <h1>Homepage</h1>
-            <div>
+        </div>
+            <div className="games-grid">
                 {error && <p>{error}</p>}
                 {data && data.results.map((game) => (
+                
                     <CardGame key={game.id} game={game} />
+                    
                 ))}
+                
             </div>
         </>
     );

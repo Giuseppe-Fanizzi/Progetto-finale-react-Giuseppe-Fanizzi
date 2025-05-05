@@ -16,8 +16,8 @@ export default function GenrePage() {
 
     return (
         <>
-           <h2>welcome to {genre} page</h2>
-           <div className="grid-game-list">
+           <h2>Welcome to {genre} Page</h2>
+           <div className="grid-game-list games-grid">
             {error && <article>{error}</article> }
             {data && 
             data.results.map((game) => <CardGame key={game.id} game={game}/>)}
