@@ -14,7 +14,8 @@ export default function Homepage() {
         <>
         <div className="text-center">
 
-            <h1>Homepage</h1>
+            <h1>Welcome to GameLab </h1>
+            <h2>Homepage</h2>
         </div>
             <div className="games-grid">
                 {error && <p>{error}</p>}

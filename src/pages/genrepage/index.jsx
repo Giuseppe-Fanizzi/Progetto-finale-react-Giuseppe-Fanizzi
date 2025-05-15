@@ -16,7 +16,7 @@ export default function GenrePage() {
 
     return (
         <>
-           <h2>Welcome to {genre} Page</h2>
+           <h2>{genre} category</h2>
            <div className="grid-game-list games-grid">
             {error && <article>{error}</article> }
             {data && 

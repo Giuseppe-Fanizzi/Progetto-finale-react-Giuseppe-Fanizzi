@@ -37,7 +37,9 @@
     color: rgb(255, 255, 255);           
   }
   
-  
+  html{
+    background-color: #111 !important;
+  }
   
   /*Layout generale*/
 
@@ -263,6 +265,8 @@
     background-color: var(--card-bg-color);
     color: white;
     height: 500px;
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     overflow: hidden;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed);
@@ -276,13 +280,21 @@
   
   
   .game-card-content {
-    padding: 0.75rem;
+    flex: 1;                   
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+    
   }
   
   .game-card-content .game-title {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    white-space: nowrap;      
+  overflow: hidden;         
+  text-overflow: ellipsis;   
+  max-width: 100%;
   }
   
   .game-card-content .game-details {
@@ -290,6 +302,10 @@
     color: #aaa;
   }
   
+  .game-card-content .btn {    
+    margin-top: auto;           
+  }
+
   /* Badge */
   .game-card-content .game-badge {
     display: inline-block;
@@ -318,6 +334,26 @@
     color: white;
 
   }
+
+  .bg-footer{
+    background-color: #111;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+#mainNav > ul {
+  display: flex;
+  align-items: center;    
+  margin: 0;
+  padding: 0;
+}
+
+
+#mainNav > ul > li {
+  margin-left: 1rem;
+}
+
 
   @media (max-width: 768px) {
     .app-container {

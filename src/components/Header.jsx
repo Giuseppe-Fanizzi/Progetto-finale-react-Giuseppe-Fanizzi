@@ -3,7 +3,7 @@ import Searchbar from "./Searchbar";
 import  supabase  from "../supabase/supabase-client";
 import { useContext } from "react";
 import SessionContext from "../context/SessionContext";
-
+import logo from "../assets/logo.png";
 
 export default function Header() {
 
@@ -28,9 +28,10 @@ export default function Header() {
                 <nav className="navbar navbar-expand-lg  py-2">
                     <div className="container d-flex align-items-center">
 
-                        
-                        <Link to="/" className="navbar-brand text-white fs-3">
-                            GameLab
+
+                        <Link to="/" className=" mt-0 ">
+                            <img src={logo} alt="GameLab" className="d-inline-block align-text-top"
+                                style={{ maxHeight: '145px',  }} />
                         </Link>
 
                         
@@ -57,16 +58,23 @@ export default function Header() {
                             {session ? (
                             <ul>
                                 <li>
-                                    <details className="dropdown mt-3">
-                                        <summary>
+                                    <details className="dropdown mt-1 d-flex justify-content-center align-items-center">
+                                        <summary className="mt-1">
                                             Account
                                         </summary>
-                                        <ul dir="rtl">
-                                            <li> <a href="#">Settings</a></li>
+                                        
+
+                                        <ul className="d-flex" dir="rtl">
                                             <li>
-                                            <button onClick={signOut}>Logout</button>
+                                            <button className="bg-danger text-white p-1" onClick={signOut}>Logout</button>
                                             </li>
+                                            <div className="d-flex mt-2">
+                                            <li> <a href="/account">Settings</a></li>
+                                            <li> <a href="/profile">Profile</a></li>
+
+                                            </div>
                                         </ul>
+                                        
                                     </details>
                                 </li>
                             </ul>

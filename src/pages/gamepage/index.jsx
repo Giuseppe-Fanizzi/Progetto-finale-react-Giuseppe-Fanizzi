@@ -1,6 +1,9 @@
 
 import { useParams } from "react-router";
 import  useFetchSolution  from "../../hook/useFetchSolution";
+import ToggleFavorite from "../../components/ToggleFavorite";
+import '../../components/css/gamepage.css';
+import Chatbox from "../../components/Chatbox";
 
 export default function GamePage() {
     const { id } = useParams();
@@ -13,19 +16,29 @@ export default function GamePage() {
 
     return (
         <>
-        {error && <h1>{error}</h1>}
-        <div className="game-page">
-            <div className="style-game-info">
-                <p>{data && data.released}</p>
-                <h1>{data && data.name}</h1>
-                <p>Rating: {data && data.rating}</p>
-                <p>About:</p>
-                <p>{data && data.description_raw}</p>
-                </div>
+            {error && <h1>{error}</h1>}
+            <div className="game-page">
+                <div className="style-game-info">
+                    <p>{data && data.released}</p>
+                    <h1>{data && data.name}</h1>
+                    <p>Rating: {data && data.rating}</p>
+                    <div className="d-flex justify-content-center align-items-center">
+
                 <div className="style-game-image">
                     <img src={data && data.background_image} alt={data && data.name} />
                 </div>
+                    </div>
+                    <ToggleFavorite game={data} />
+                    <div className="d-flex flex-column justify-content-center align-items-center">
+
+                    <p>About:</p>
+                    <p className="text-box">{data && data.description_raw}</p>
+                    </div>
                 </div>
+                <div className="style-chatbox ">
+                    <Chatbox data={data && data} />
+                </div>
+            </div>
         </>
     )
 }

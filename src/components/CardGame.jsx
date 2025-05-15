@@ -9,15 +9,22 @@ export default function Card({ game }) {
     return (
         
 
-        <div className=" game-card " key={game.id}>
+        <div className=" game-card" key={game.id}>
              <LazyLoadGameImage image={game.background_image} />
-            <h2>{game.name}</h2>
+             <div className="game-card-content">
+
+            <h2 className="game-title">{game.name}</h2>
             <p>Rating: {game.rating}</p>
             <p className="release-date-anim">Release Date: {game.released}</p>
             <p>Genres: {genres}</p>
-           <a className="btn-cyberpunk pulse">
-            <Link to={`/games/${game.slug}/${game.id}`}>visita il gioco</Link>
+            <div className="game-card-footer">
+
+           <a href={`/games/${game.slug}/${game.id}`} 
+           className="btn-cyberpunk pulse">
+            visita il gioco
             </a>
+            </div>
+             </div>
         </div>
         
     )
