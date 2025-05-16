@@ -64,20 +64,32 @@ export default function Header() {
                                         </summary>
                                         
 
-                                        <ul className="d-flex" dir="rtl">
-                                            <li>
-                                            <button className="bg-danger text-white p-1" onClick={signOut}>Logout</button>
-                                            </li>
-                                            <div className="d-flex mt-2">
-                                            <li> <a href="/account">Settings</a></li>
-                                            <li> <a href="/profile">Profile</a></li>
+                                            <ul className="d-flex" dir="rtl">
+                                                <li>
+                                                    <button
+                                                        className="bg-danger text-white p-1"
+                                                        onClick={signOut}
+                                                    >
+                                                        Logout
+                                                    </button>
+                                                </li>
+                                                <div className="d-flex mt-2">
+                                                    <li>
+                                                        <Link to="/account" className="text-decoration-none">
+                                                            Settings
+                                                        </Link>
+                                                    </li>
+                                                    <li>
+                                                        <Link to="/profile" className="text-decoration-none">
+                                                            Profile
+                                                        </Link>
+                                                    </li>
+                                                </div>
+                                            </ul>
 
-                                            </div>
-                                        </ul>
-                                        
-                                    </details>
-                                </li>
-                            </ul>
+                                        </details>
+                                    </li>
+                                </ul>
                             ) : (
 
                            
