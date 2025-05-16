@@ -51,4 +51,4 @@ Dopo l'autenticazione (gestita tramite Supabase per massima sicurezza), ogni ute
 
 ## Deployment
 
-* [GameLab]
+* [GameLab](https://game-lab-rose.vercel.app/)
